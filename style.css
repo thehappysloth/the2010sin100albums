@@ -1,0 +1,131 @@
+body {
+    background-color: black;
+    margin: 0;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+}
+
+#grid-container {
+    margin: 0;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto auto auto auto;
+    height: 100vw;
+    width: 100vw;
+    max-width: 100%;
+}
+
+.grid-item, .grid-item img {
+    height: 10vw;
+    max-width: 10vw;
+    width: 100%;
+}
+
+.grid-item:hover, .grid-item img:hover, #cover:hover {
+    cursor: pointer;
+}
+
+#popup {
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+#card {
+    background-color: white;
+    color: black;
+    border-radius: .5rem;
+    text-align: center;
+    width: 25vw;
+    position: relative;
+    margin: auto;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#cover img {
+    width: 25vw;
+    border-top-left-radius: .5rem;
+    border-top-right-radius: .5rem;
+}
+
+#artist {
+    font-size: 1.3rem;
+    color: grey;
+}
+
+#title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+#title, #artist, #year, #genres, #stream, #infos {
+    padding: .3rem;
+}
+
+#genres {
+    color: grey;
+}
+
+#youtube img, #spotify img, #bandcamp img {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    height: 3rem;
+    cursor: pointer;
+}
+
+@keyframes flip {
+    from {
+        transform: rotateY(0deg);
+    }
+    to {
+        transform: rotateY(-360deg);
+    }
+}
+
+.grid-item img {
+    transition: 1s ease-in-out;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+    animation-duration: 1s;
+    color: black;
+}
+
+.grid-item img:hover {
+    transform: rotateY(360deg);
+    transition: 0s;
+}
+
+@media (max-aspect-ratio: 1/1) {
+    body {
+        height: auto;
+    }
+    #grid-container {
+        grid-template-columns: auto auto auto auto;
+        height: 625vw;
+    }
+    .grid-item, .grid-item img {
+        height: 25vw;
+        max-width: 25vw;
+        width: 100%;
+    }
+    #card {
+        width: 75vw;
+    }
+    #cover img {
+        width: 75vw;
+    }
+    #youtube img, #spotify img, #bandcamp img {
+        height: 5rem;
+    }
+    #title {
+        font-size: 1.8rem;
+    }
+    #title, #artist, #year, #genres, #stream, #infos {
+        padding: 0.8rem;
+    }
+}
